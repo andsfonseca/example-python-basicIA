@@ -21,6 +21,6 @@ class Node:
             print("Nome do Node: ", self.name)
             print("Adjacências: ")
             for adjacency in self.adjacencies.keys(): 
-                print("    ", adjacency.name, ": ", self.adjacencies[neighbor])
+                print("    ", adjacency.name, ": ", self.adjacencies[adjacency])
             print()
 

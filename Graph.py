@@ -59,13 +59,17 @@ class Graph:
                     x = 0;
                     if (queue):
                         for q in queue:
-                            if(expectation[x] < node.adjacencies[adjacency]):
+                            if(expectation[x] > node.adjacencies[adjacency]):
                                 break
                             x += 1
-                    queue.insert(x-1, adjacency)
-                    expectation.insert(x-1, node.adjacencies[adjacency])    
+                    queue.insert(x, adjacency)
+                    expectation.insert(x, node.adjacencies[adjacency])    
 
                     parent[adjacency] = node;
+            print("===============")
+            for q in queue:
+                q.printNode()
+            input()
             if(queue):
                 return Graph.DjikstraSearch(final, queue, traveled, parent, expectation)                
             else:
