@@ -1,8 +1,9 @@
 '''Imports'''
 from Node import Node
 from Defaults import Defaults
-from Search import Search
-
+from Graph import Graph
+import sys
+sys.setrecursionlimit(3000) 
 def showMappedNodes():
     for nodeKey in m_mappednodes.keys():
         m_mappednodes[nodeKey].printNode()
@@ -16,5 +17,5 @@ def showNodesList(nodesList):
 
 m_mappednodes = Defaults.Load("Cidades")
 ##showMappedNodes();
-bfsResult = Search.BreadthFirst(m_mappednodes["Bucareste"], m_mappednodes["Arad"])
+bfsResult = Graph.DjikstraSearch(m_mappednodes["Bucareste"], m_mappednodes["Arad"])
 showNodesList(bfsResult)
