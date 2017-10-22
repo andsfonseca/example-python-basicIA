@@ -57,7 +57,7 @@ class Defaults:
             _mappedNodes["Urziceni"].addAdjacencies(_mappedNodes["Hirsova"], 98)
             _mappedNodes["Hirsova"].addAdjacencies(_mappedNodes["Eforie"], 86)
 
-            if(isToPrint): print("Configuração carregadas")
+            if(isToPrint): print("Configuração de cidades foram carregadas")
 
         elif (defaultParam == "riverproblem"):
             states = {"btgr|", "tr|bg", "btr|g", "t|bgr", "btg|r",
@@ -113,7 +113,7 @@ class Defaults:
             _expectations[_mappedNodes["Urziceni"]] = 80
             _expectations[_mappedNodes["Vaslui"]] = 199
             _expectations[_mappedNodes["Zerind"]] = 374
-            print("Expectativas carregadas")
+            print("Expectativas até Bucarste foram carregadas")
             return _expectations
         else:
             print("Nenhuma Expectativa encontrada")

@@ -101,6 +101,6 @@ class Graph:
                         parent[adjacency] = node;
                     queue.insert(x, adjacency)
             if(queue):
-                return Graph.DjikstraSearch(final, queue, traveled, parent, euristics)                
+                return Graph.ASearch(expectations, final, queue, traveled, parent, euristics)                
             else:
                 return None;
