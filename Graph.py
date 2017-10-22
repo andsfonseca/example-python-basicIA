@@ -38,8 +38,9 @@ class Graph:
                 return None;
 
     @staticmethod
-    def DjikstraSearch(final, queue = [], traveled = [], parent = {}, expectation = []):
+    def DjikstraSearch(final, queue = [], traveled = [], parent = {}, expectation = {}):
         node = None;
+        euristic = 0;
 
         if not isinstance(queue, list):
             node = queue;
@@ -47,7 +48,7 @@ class Graph:
             queue = [];
         else:
             node = queue.pop(0)
-            expectation.pop(0)
+            euristic = expectation[node]
 
         traveled.append(node);
 
@@ -56,20 +57,20 @@ class Graph:
         else:
             for adjacency in node.adjacencies.keys():
                 if(not Utils.contaisInList(traveled, adjacency)):
+                    
+                    nextEuristic = euristic + node.adjacencies[adjacency]
                     x = 0;
                     if (queue):
                         for q in queue:
-                            if(expectation[x] > node.adjacencies[adjacency]):
-                                break
+                            if(nextEuristic < expectation[q]):
+                                break;
                             x += 1
-                    queue.insert(x, adjacency)
-                    expectation.insert(x, node.adjacencies[adjacency])    
 
-                    parent[adjacency] = node;
-            print("===============")
-            for q in queue:
-                q.printNode()
-            input()
+                    if((Utils.contaisInList(queue, adjacency) and expectation[adjacency] > nextEuristic) or 
+                        not Utils.contaisInList(queue, adjacency)):
+                        expectation[adjacency] = nextEuristic
+                        parent[adjacency] = node;
+                    queue.insert(x, adjacency)
             if(queue):
                 return Graph.DjikstraSearch(final, queue, traveled, parent, expectation)                
             else:

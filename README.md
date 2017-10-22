@@ -16,6 +16,7 @@ Conteúdo apenas para armazenamento e aprendizado.
 ### + Utils
 > - `contaisInList(list, obj):` : Verifica se um determinado Objeto está contido em uma lista
 
-### + Search
+### + Graph
 > - `dictParentToList(dictx, last)` : Transforma um dicionário de pais em uma lista encadeada do primeiro pai até seu ultimo filho. Recebe como parametro o ultimo filho e o dicionário de paternidade
-> - `BreadthFirst( final, queue = [] , traveled = [], parent = {})` : Realiza uma busca em largura dos nodes em uma fila até o objetivo final. É possível também entregar os dados no meio de uma busca setando as variaveis `traveled` e `parent`
+> - `BFSearch( final, queue = [] , traveled = [], parent = {})` : Realiza uma busca em largura dos nodes em uma fila até o objetivo final. É possível também entregar os dados no meio de uma busca setando as variaveis `traveled` e `parent`
+> - `DjikstraSearch(final, queue = [], traveled = [], parent = {}, expectation = {})` : Realiza uma busca usando o algoritmo de Djikstra uma fila de prioridades até o objetivo final. É possível também entregar os dados no meio de uma busca setando as variaveis `traveled`, `parent` e `expectation`
