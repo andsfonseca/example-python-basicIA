@@ -101,9 +101,6 @@ class Graph:
                         parent[adjacency] = node;
                     queue.insert(x, adjacency)
             if(queue):
-                for q in queue:
-                    print(expectations[q], end=" ")
-                    print()
                 return Graph.DjikstraSearch(final, queue, traveled, parent, euristics)                
             else:
                 return None;

@@ -1,5 +1,6 @@
 from Node import Node
 from Utils import Utils
+from RiverProblem import RiverProblem
 
 class Defaults:  
     def __init__(self):
@@ -57,6 +58,25 @@ class Defaults:
             _mappedNodes["Hirsova"].addAdjacencies(_mappedNodes["Eforie"], 86)
 
             if(isToPrint): print("Configuração carregadas")
+
+        elif (defaultParam == "riverproblem"):
+            states = {"btgr|", "tr|bg", "btr|g", "t|bgr", "btg|r",
+            "r|btg", "brg|t", "g|btr", "bg|tr", "|btgr" }
+
+            for state in states:
+                _mappedNodes[state] = Node(RiverProblem.createStateFromStringParam(state))
+
+            _mappedNodes["btgr|"].addAdjacencies(_mappedNodes["tr|bg"])
+            _mappedNodes["tr|bg"].addAdjacencies(_mappedNodes["btr|g"])
+            _mappedNodes["btr|g"].addAdjacencies(_mappedNodes["t|bgr"])
+            _mappedNodes["btr|g"].addAdjacencies(_mappedNodes["r|btg"])
+            _mappedNodes["t|bgr"].addAdjacencies(_mappedNodes["btg|r"])
+            _mappedNodes["btg|r"].addAdjacencies(_mappedNodes["g|btr"])
+            _mappedNodes["r|btg"].addAdjacencies(_mappedNodes["brg|t"])
+            _mappedNodes["brg|t"].addAdjacencies(_mappedNodes["g|btr"])
+            _mappedNodes["g|btr"].addAdjacencies(_mappedNodes["bg|tr"])
+            _mappedNodes["bg|tr"].addAdjacencies(_mappedNodes["|btgr"])
+
         else:
             if(isToPrint): print("Nenhuma configuração encontrada")
             return None;

@@ -1,10 +1,9 @@
-
 class Node:
-    def __init__(self, name):
-        self.name = name
+    def __init__(self, value):
+        self.value = value
         self.adjacencies = {}
 
-    def addAdjacencies(self, node, distance):
+    def addAdjacencies(self, node, distance = 0):
         if(self.searchAdjacencies(node) is None):
             self.adjacencies[node] = distance
             node.addAdjacencies(self, distance)
@@ -16,11 +15,11 @@ class Node:
         return None
 
     def printNode(self, short = False):
-        if(short):  print(self.name, end="")
+        if(short):  print(self.value, end="")
         else:
-            print("Nome do Node: ", self.name)
+            print("Valor do Node: ", self.value)
             print("Adjacências: ")
             for adjacency in self.adjacencies.keys(): 
-                print("    ", adjacency.name, ": ", self.adjacencies[adjacency])
+                print("    ", adjacency.value, ": ", self.adjacencies[adjacency])
             print()
 

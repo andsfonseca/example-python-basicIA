@@ -1,5 +1,4 @@
 '''Imports'''
-from Node import Node
 from Defaults import Defaults
 from Graph import Graph
 
@@ -25,7 +24,8 @@ def main():
             print("1 -> Carregar Predefinições")
             print("2 -> Mostrar Nodes Mapeados")
             print("3 -> Realizar Busca")
-            print("4 -> Sair")
+            print("4 -> Problema do Rio")
+            print("5 -> Sair")
             option = int(input("Opção Selecionada: "))
         elif (option == 1):
             print("Escolha uma predefição: ")
@@ -75,6 +75,20 @@ def main():
             input("Pressione Enter para Continuar")
             option = 0
         elif (option == 4):
+
+            _riverMappedNotes = Defaults.Load("RiverProblem")
+            result = Graph.BFSearch(_riverMappedNotes["|btgr"], _riverMappedNotes["btgr|"])
+
+            count = 0
+            for r in result:
+                count +=1
+                print("Estado ", count, ": ")
+                r.value.print()
+                print()
+
+            input("Pressione Enter para Continuar")
+            option = 0
+        elif (option == 5 ):
             break
         else:
             print("Este não é um comando válido")
