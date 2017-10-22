@@ -63,12 +63,12 @@ def main():
                 elif(suboption == 2):
                     showNodesList(Graph.DjikstraSearch(m_mappednodes[nodeKeyFinal], m_mappednodes[nodeKeyStart]))
                 elif(suboption == 3):
-                    print("Escolha uma Expectação")
-                    print("Expectações Disponíves = ", end="{")
+                    print("Escolha uma Expectativa")
+                    print("Expectativas Disponíves = ", end="{")
                     Defaults.printParamExpectations()
                     print("}")
                     print()
-                    predefName = input("Expectação Selecionada: ")
+                    predefName = input("Expectativa Selecionada: ")
                     expectations = Defaults.LoadExpectations(m_mappednodes, predefName)
                     if(not expectations is None):
                         showNodesList(Graph.ASearch(expectations, m_mappednodes[nodeKeyFinal], m_mappednodes[nodeKeyStart]))

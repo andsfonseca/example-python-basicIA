@@ -93,10 +93,10 @@ class Defaults:
             _expectations[_mappedNodes["Urziceni"]] = 80
             _expectations[_mappedNodes["Vaslui"]] = 199
             _expectations[_mappedNodes["Zerind"]] = 374
-            print("Expectações carregadas")
+            print("Expectativas carregadas")
             return _expectations
         else:
-            print("Nenhuma expectação encontrada")
+            print("Nenhuma Expectativa encontrada")
             return None;   
 
                 

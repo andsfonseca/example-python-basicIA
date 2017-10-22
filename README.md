@@ -11,7 +11,10 @@ Conteúdo apenas para armazenamento e aprendizado.
 > - `searchAdjacencies(node)` : Procura se um determinado Node possui adjascência com ele mesmo, caso tenha retorna a distância senão retorna `None`
 
 ### + Defaults
-> - `Load(defaultParam)` : Carrega um Dicionário de Nodes predefinidos e retorna (Valores Disponíveis {"Cidades"}) 
+> - `Load(defaultParam)` : Carrega um Dicionário de Nodes predefinidos e retorna (Valores Disponíveis {"cidades"}) 
+> - `printParams(_mappedNodes, expectationTarget)` : Carrega um Dicionário de Expectativas predefinidas e retorna (Valores Disponíveis {"cbucareste"}) 
+> - `printParams()` : Imprime os nomes do dicionários de Nodes
+> - `printParamExpectations()` : Imprime as expectativas predefindas
 
 ### + Utils
 > - `contaisInList(list, obj):` : Verifica se um determinado Objeto está contido em uma lista
